@@ -60,5 +60,6 @@ try {
         console.log("searching music library for:", toolResponse.tool_input.artist_name, toolResponse.tool_input.song_title);
     }
 } catch (error) {
+    console.log("error parsing tool response:", error);
     console.error(error);
 }
