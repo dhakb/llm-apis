@@ -13,5 +13,9 @@
   "devDependencies": {
     "@types/node": "^24.5.0",
     "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "openai": "^5.20.3"
   }
 }
