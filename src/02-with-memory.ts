@@ -5,6 +5,10 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// memory can be given to the model as part of the input. which the structurel and roled additional context to the model.
+// it all chains up in the new response, the data that it's trained one and the data given as part of the input.
+// one response can be appended to the input of the next response.
+
 let response = await openai.responses.create({
   model: "gpt-4o-mini",
   input: [
@@ -19,6 +23,8 @@ let response = await openai.responses.create({
     },
   ],
 });
+
+// console.log(response.output_text);
 
 response = await openai.responses.create({
   model: "gpt-4o-mini",

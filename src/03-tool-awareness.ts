@@ -5,6 +5,13 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// prompt is the power of the model. 
+// prompt is the only way to interact with the model?! and all abstractions we have on the way we interact with the model come down to the prompt.
+// this mental models are important to understand and build up correctly.
+// prompt can be used to make the model aware of the tools that it has, and what to do with them. just a well described function definition.
+// not an implementation details, but availability and the awareness of the purpose, input and output.
+
+
 let response = await openai.responses.create({
   model: "gpt-4o-mini",
   input: [
@@ -54,10 +61,10 @@ let response = await openai.responses.create({
 try {
     const toolResponse = JSON.parse(response.output_text);
 
-    console.log("tool was called:", toolResponse.tool_name);
+    console.log("::===:: tool was called:", toolResponse.tool_name + "()");
 
     if(toolResponse.tool_name === "search_music") {
-        console.log("searching music library for:", toolResponse.tool_input.artist_name, toolResponse.tool_input.song_title);
+        console.log("searching music for:", toolResponse.tool_input.artist_name, toolResponse.tool_input.song_title);
     }
 } catch (error) {
     console.log("error parsing tool response:", error);

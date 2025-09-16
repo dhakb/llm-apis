@@ -5,6 +5,15 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+
+// llm apis provide a way to make the model aware of the tools that it can use. 
+// each llm provider or their apis have their own way to do this. namings migh not match but all convey the same concept. 
+// tool is kind of conditional action to get more context or/and have impacts on external systems.
+// this given way of making the model aware of the tools is easier and more effective to use then relying on the prompt.
+
+// as we differentiate role based context, model also distinguishes the tool calls from the user input. 
+// marks the call with uniqe id to map the call return back to the response.
+
 let response = await openai.responses.create({
   model: "gpt-4o-mini", // gpt-5 is dissapointing here. flaky function calling.
   tools: [
