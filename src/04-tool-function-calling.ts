@@ -14,6 +14,8 @@ const openai = new OpenAI({
 // as we differentiate role based context, model also distinguishes the tool calls from the user input. 
 // marks the call with uniqe id to map the call return back to the response.
 
+// fuction calling is user defined tool. some llm providers come with built in tools. e.g. image generation, translation, etc.
+
 let response = await openai.responses.create({
   model: "gpt-4o-mini", // gpt-5 is dissapointing here. flaky function calling.
   tools: [
