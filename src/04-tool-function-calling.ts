@@ -17,7 +17,7 @@ const openai = new OpenAI({
 // fuction calling is user defined tool. some llm providers come with built in tools. e.g. image generation, translation, etc.
 
 let response = await openai.responses.create({
-  model: "gpt-4o-mini", // gpt-5 is dissapointing here. flaky function calling.
+  model: "gpt-4o-mini",
   tools: [
     {
       type: "function",

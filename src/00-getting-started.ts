@@ -6,7 +6,7 @@ const openai = new OpenAI({
 });
 
 
-// making a request to the openai api, which allowes us to communicate with the model. gpt-4o-mini is the model we are using.
+// making a request to llm response, which allowes to communicate with the model.
 // this is the way their models are exposed to the public.
 // we are using the responses api. which is a new api over the chat completion api.
 // they used the chance to improve the api desing and update the name of the api. def better naming. 

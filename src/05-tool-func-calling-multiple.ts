@@ -6,9 +6,9 @@ const openai = new OpenAI({
 });
 
 
-// base in the input model can recide to call multiple tools in the single response.
-// it can return the list of tool calls in the response. to indicate what requested tool needs to be called.
-// tool_call is the decition to call the tool, which followed literal tool calling on the application side.
+// based on the input model can decide to call multiple tools in the a single response.
+// it can return the list of tool calls in the response to indicate what requested tool needs to be invoked.
+// tool_call is the detection to call the tool, which is followed by execution of the tool on the application side.
 // application just gets instructions what given tool needs to be invoked.
 
 let response = await openai.responses.create({
