@@ -9,7 +9,7 @@
   },
   "scripts": {
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "build-mcp-server": "tsc src/13-mcp-server.ts --outDir build"
+    "build-mcp-server": "tsc src/13-mcp-server.ts --outDir build && mv build/13-mcp-server.js build/13-mcp-server.cjs && chmod 755 build/13-mcp-server.cjs"
   },
   "devDependencies": {
     "@types/node": "^24.5.0",

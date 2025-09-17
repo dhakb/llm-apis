@@ -12,7 +12,7 @@ import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js"
 
 
 // in this example mcp-client connect to local mcp-server
-// clients 
+// mcp-clients are manages by mcp-hosts/ai-applications, through which specific tool ared called.
 
 async function main() {
   const transport = new StdioClientTransport({

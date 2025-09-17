@@ -40,8 +40,10 @@ var fs = require("node:fs/promises");
 var zod_1 = require("zod");
 var mcp_js_1 = require("@modelcontextprotocol/sdk/server/mcp.js");
 var stdio_js_1 = require("@modelcontextprotocol/sdk/server/stdio.js");
-// mcp-server is the application that provides standardized interface to provide tools to the model.
-// way to define tools to be consumed by mcp-client which in return provides the tool aweraness to the model to generate tool calls.
+// mcp-server is the program that provides standardized interface to expose tools to ai applications.
+// this ai applications called mcp-hosts and they implement mcp-client to interact with the mcp-server.
+// mcp-hosts/ai-applications initialise the mcp-client to communicate with the mcp-server.
+// each mcp-host/ai-application can have multiple mcp-clients. and each client only handles one mcp-server.
 var server = new mcp_js_1.McpServer({
     name: "local-fs",
     version: "1.0.0",
@@ -62,9 +64,12 @@ server.registerTool("list_files", {
     return __generator(this, function (_c) {
         switch (_c.label) {
             case 0:
-                _c.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, fs.readdir(path || "./", { withFileTypes: true })];
+                console.log("CALLING list_files tool with path::");
+                _c.label = 1;
             case 1:
+                _c.trys.push([1, 3, , 4]);
+                return [4 /*yield*/, fs.readdir(path || "./", { withFileTypes: true })];
+            case 2:
                 content = _c.sent();
                 contentList = content.map(function (c) { return ({
                     name: c.name,
@@ -80,7 +85,7 @@ server.registerTool("list_files", {
                             },
                         ],
                     }];
-            case 2:
+            case 3:
                 error_1 = _c.sent();
                 return [2 /*return*/, {
                         content: [
@@ -90,7 +95,7 @@ server.registerTool("list_files", {
                             },
                         ],
                     }];
-            case 3: return [2 /*return*/];
+            case 4: return [2 /*return*/];
         }
     });
 }); });
