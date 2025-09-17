@@ -25,7 +25,6 @@ server.registerTool(
     inputSchema: {
       path: z
         .string()
-        .optional()
         .describe(
           "Path to directory to list content of it (defaults to current directory)"
         ),
