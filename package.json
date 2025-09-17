@@ -12,6 +12,7 @@
     "build-mcp-server": "tsc src/13-mcp-server.ts --outDir build && mv build/13-mcp-server.js build/13-mcp-server.cjs && chmod 755 build/13-mcp-server.cjs"
   },
   "devDependencies": {
+    "@types/express": "^5.0.3",
     "@types/node": "^24.5.0",
     "typescript": "^5.9.2"
   },
@@ -21,6 +22,7 @@
     "@modelcontextprotocol/sdk": "^1.18.0",
     "ai": "^5.0.44",
     "dotenv": "^17.2.2",
+    "express": "^5.1.0",
     "openai": "^5.20.3",
     "zod": "^3.25.76"
   }
