@@ -55,7 +55,6 @@ server.registerTool("list_files", {
     inputSchema: {
         path: zod_1.z
             .string()
-            .optional()
             .describe("Path to directory to list content of it (defaults to current directory)"),
     },
 }, function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
@@ -64,12 +63,9 @@ server.registerTool("list_files", {
     return __generator(this, function (_c) {
         switch (_c.label) {
             case 0:
-                console.log("CALLING list_files tool with path::");
-                _c.label = 1;
-            case 1:
-                _c.trys.push([1, 3, , 4]);
+                _c.trys.push([0, 2, , 3]);
                 return [4 /*yield*/, fs.readdir(path || "./", { withFileTypes: true })];
-            case 2:
+            case 1:
                 content = _c.sent();
                 contentList = content.map(function (c) { return ({
                     name: c.name,
@@ -85,7 +81,7 @@ server.registerTool("list_files", {
                             },
                         ],
                     }];
-            case 3:
+            case 2:
                 error_1 = _c.sent();
                 return [2 /*return*/, {
                         content: [
@@ -95,7 +91,7 @@ server.registerTool("list_files", {
                             },
                         ],
                     }];
-            case 4: return [2 /*return*/];
+            case 3: return [2 /*return*/];
         }
     });
 }); });
