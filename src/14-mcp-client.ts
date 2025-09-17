@@ -14,6 +14,10 @@ import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js"
 // in this example mcp-client connect to local mcp-server
 // mcp-clients are manages by mcp-hosts/ai-applications, through which specific tool ared called.
 
+// for wider example. apple-note app comes with local mcp-server.
+// other local applications that support mcp-client can connect to it and use the tools exposed by apple-note's mcp-server.
+// such claude desktop, which is a mcp-host, that manages mcp-client to communicat with apple-note's mcp-server.
+
 async function main() {
   const transport = new StdioClientTransport({
     command: "node",
