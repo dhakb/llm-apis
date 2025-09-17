@@ -45,10 +45,10 @@ const { toolCalls, steps, text } = await generateText({
   },
 });
 
-console.log("toolCalls::", toolCalls);
-console.log("steps::", steps);
+console.log("toolCalls::", toolCalls);  // as we would normally expect from model to generate tool calls
 
-const allToolCalls = steps.flatMap((step) => step.toolCalls);
+console.log("steps::", steps);                                // not sure what this is for
+const allToolCalls = steps.flatMap((step) => step.toolCalls);  
+// console.log("allToolCalls::", allToolCalls);
 
-console.log("allToolCalls::", allToolCalls);
-console.log("text::", text);
+console.log("text::", text); // final text response in conversational style
