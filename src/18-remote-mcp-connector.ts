@@ -9,6 +9,10 @@ import {
 } from "ai";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
 
+
+// same approach different transport
+// instead of stdio reads from the network over http
+
 const url = new URL("http://localhost:3000/mcp");
 
 const mcpClient = await createMCPClient({
