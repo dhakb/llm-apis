@@ -13,6 +13,10 @@ import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/
 // same approach different transport
 // instead of stdio reads from the network over http
 
+// this even can get many marks. as it's already agentic_ approach.
+// loop is managed in single api call all that it makes this agentic nature hide behind the interface
+
+
 const url = new URL("http://localhost:3000/mcp");
 
 const mcpClient = await createMCPClient({
