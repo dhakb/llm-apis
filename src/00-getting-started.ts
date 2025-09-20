@@ -9,8 +9,8 @@ const openai = new OpenAI({
 // making a request to llm response, which allowes to communicate with the model.
 // this is the way their models are exposed to the public.
 // we are using the responses api. which is a new api over the chat completion api.
-// they used the chance to improve the api desing and update the name of the api. def better naming. 
-// naming is important. 
+// they used the chance to improve the api desing and update the name of the api. def better naming. (not just the name, the whole api is new)
+// naming is important, as they make it for me and others to make sense
 // it should express the underlying work process, to help the user create the mental abstraction that is closer to lower implementation details.
 
 const response = await openai.responses.create({

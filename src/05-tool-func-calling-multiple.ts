@@ -12,7 +12,7 @@ const openai = new OpenAI({
 // application just gets instructions what given tool needs to be invoked.
 
 let response = await openai.responses.create({
-  model: "gpt-4o-mini", // gpt-5 is dissapointing here. flaky function calling.
+  model: "gpt-4o-mini",
   tools: [
     {
       type: "function",
