@@ -2,7 +2,7 @@ import { openai } from "@ai-sdk/openai";
 import { Agent } from "@mastra/core/agent";
 import { Memory } from "@mastra/memory";
 import { LibSQLStore } from "@mastra/libsql";
-import { fsTool } from "../tools/fs-tool";
+import { lsTool, readFileTool } from "../tools/fs-tools";
 
 export const fsAgent = new Agent({
   name: "fs agent",
@@ -16,7 +16,7 @@ export const fsAgent = new Agent({
     You respond in the natural language and, clearly distinguishing the tool call results if they needed to be returned as response to the user.
 `,
   model: openai("gpt-4o-mini"),
-  tools: { fsTool },
+  tools: { lsTool, readFileTool },
   memory: new Memory({
     storage: new LibSQLStore({
       url: "file:../mastra.db", // path is relative to the .mastra/output directory
